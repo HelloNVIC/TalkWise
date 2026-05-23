@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="capGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="stemGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f1f5f9"/>
+      <stop offset="100%" style="stop-color:#e2e8f0"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#1e293b" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- 蘑菇伞盖 = 话泡 -->
+  <g filter="url(#shadow)">
+    <!-- 伞盖主体 -->
+    <path d="M56 230 Q56 80 256 80 Q456 80 456 230 Q456 260 400 270 L112 270 Q56 260 56 230Z" fill="url(#capGrad)"/>
+
+    <!-- 伞盖高光 -->
+    <path d="M120 170 Q120 120 256 110 Q320 108 370 130" fill="none" stroke="white" stroke-width="12" stroke-linecap="round" opacity="0.25"/>
+
+    <!-- 对话气泡尾巴 -->
+    <path d="M180 268 L150 320 L220 272" fill="url(#capGrad)"/>
+  </g>
+
+  <!-- 蘑菇柄 = 文字柄 -->
+  <g filter="url(#shadow)">
+    <path d="M190 268 Q190 260 200 260 L312 260 Q322 260 322 268 L330 400 Q332 440 256 440 Q180 440 182 400Z" fill="url(#stemGrad)"/>
+    <!-- 柄上高光 -->
+    <path d="M220 290 L220 410 Q220 425 240 430" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" opacity="0.3"/>
+  </g>
+
+  <!-- 三个圆点 = 对话气泡内的文字省略号 -->
+  <circle cx="190" cy="185" r="18" fill="white" opacity="0.9"/>
+  <circle cx="256" cy="175" r="20" fill="white" opacity="0.9"/>
+  <circle cx="322" cy="185" r="18" fill="white" opacity="0.9"/>
+
+  <!-- 右下角小星星 = 智慧/解码闪光 -->
+  <g transform="translate(385, 340)" opacity="0.7">
+    <path d="M0-18 L4-6 L16-6 L6 2 L10 14 L0 7 L-10 14 L-6 2 L-16-6 L-4-6Z" fill="#facc15"/>
+  </g>
+
+  <!-- 左上角小星星 -->
+  <g transform="translate(95, 115) scale(0.7)" opacity="0.5">
+    <path d="M0-18 L4-6 L16-6 L6 2 L10 14 L0 7 L-10 14 L-6 2 L-16-6 L-4-6Z" fill="#facc15"/>
+  </g>
+</svg>

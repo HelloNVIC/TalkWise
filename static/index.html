@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2563eb">
+    <title>话霉 TalkWise</title>
+    <link rel="icon" href="/logo.svg">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <img class="logo" src="/logo.svg" alt="Logo">
+        <h1>话霉 <span class="subtitle">TalkWise</span></h1>
+    </header>
+
+    <nav class="tab-bar">
+        <button class="tab-btn active" data-tab="translate">真心话→场面话</button>
+        <button class="tab-btn" data-tab="decode">BOSS潜台词</button>
+    </nav>
+
+    <main>
+        <!-- 真心话→场面话 -->
+        <section id="translate" class="tab-content active">
+            <div class="input-area" id="translate-input-area">
+                <div class="quote-banner" id="quote-translate"></div>
+                <textarea id="translate-input" placeholder="说出你的真心话..." maxlength="2000"></textarea>
+                <div id="style-chips" class="style-chips"></div>
+                <button id="translate-btn" class="submit-btn">翻译一下</button>
+                <div class="example-cards" id="examples-translate"></div>
+                <img class="workplace-illust" src="/workplace.svg" alt="">
+            </div>
+            <button class="back-btn" id="translate-back" style="display:none">← 返回</button>
+            <div id="translate-result" class="result-card" style="display:none">
+                <div class="result-row">
+                    <span class="result-label">原文</span>
+                    <p class="result-text" id="translate-original"></p>
+                </div>
+                <div class="result-divider"></div>
+                <div class="thinking-bar" id="translate-thinking-bar" style="display:none">
+                    <div class="thinking-label">NVIC Agent工作中</div>
+                    <div class="thinking-scroll" id="translate-thinking"></div>
+                </div>
+                <div class="result-row">
+                    <span class="result-label">译文</span>
+                    <div class="result-text result-highlight" id="translate-translated"></div>
+                </div>
+                <div class="result-actions">
+                    <button class="action-btn" id="copy-translate">复制</button>
+                    <button class="action-btn action-btn-primary" id="got-it-translate">我懂了</button>
+                </div>
+            </div>
+            <p class="error-msg" id="translate-error" style="display:none"></p>
+        </section>
+
+        <!-- BOSS潜台词 -->
+        <section id="decode" class="tab-content">
+            <div class="input-area" id="decode-input-area">
+                <div class="quote-banner" id="quote-decode"></div>
+                <textarea id="decode-input" placeholder="老板说了什么..." maxlength="2000"></textarea>
+                <button id="decode-btn" class="submit-btn">解码</button>
+                <div class="example-cards" id="examples-decode"></div>
+                <img class="workplace-illust" src="/pua.svg" alt="">
+            </div>
+            <button class="back-btn" id="decode-back" style="display:none">← 返回</button>
+            <div id="decode-result" class="result-card" style="display:none">
+                <div class="result-row">
+                    <span class="result-label">原话</span>
+                    <p class="result-text" id="decode-original"></p>
+                </div>
+                <div class="result-divider"></div>
+                <div class="thinking-bar" id="decode-thinking-bar" style="display:none">
+                    <div class="thinking-label">NVIC Agent工作中</div>
+                    <div class="thinking-scroll" id="decode-thinking"></div>
+                </div>
+                <div class="result-row">
+                    <span class="result-label">潜台词</span>
+                    <div class="result-text result-highlight" id="decode-decoded"></div>
+                </div>
+                <div class="result-actions">
+                    <button class="action-btn" id="copy-decode">复制</button>
+                    <button class="action-btn action-btn-primary" id="got-it-decode">我懂了</button>
+                </div>
+            </div>
+            <p class="error-msg" id="decode-error" style="display:none"></p>
+        </section>
+    </main>
+
+    <div id="toast" class="toast" style="display:none"></div>
+
+    <div id="got-it-modal" class="modal-overlay" style="display:none">
+        <div class="modal-card">
+            <div class="modal-text">你又懂了？</div>
+            <div class="modal-actions">
+                <button class="modal-btn" id="modal-nope">我没懂</button>
+                <button class="modal-btn modal-btn-win" id="modal-win">win！</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/app.js" defer></script>
+</body>
+</html>
